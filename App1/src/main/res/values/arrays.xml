@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language_names">
+        <item>Afrikaans</item>
+        <item>English</item>
+        <item>Ndebele</item>
+        <item>Northern Sotho</item>
+        <item>Sotho</item>
+        <item>Swazi</item>
+        <item>Tsonga</item>
+        <item>Tswana</item>
+        <item>Venda</item>
+        <item>Xhosa</item>
+        <item>Zulu</item>
+    </string-array>
+</resources>

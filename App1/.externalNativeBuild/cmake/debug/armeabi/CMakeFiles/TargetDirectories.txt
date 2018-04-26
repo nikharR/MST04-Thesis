@@ -1,0 +1,5 @@
+C:/Users/Nikhar/AndroidStudioProjects/MST04V1.0 - Copy - Copy/App1/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/native-lib.dir
+C:/Users/Nikhar/AndroidStudioProjects/MST04V1.0 - Copy - Copy/App1/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/edit_cache.dir
+C:/Users/Nikhar/AndroidStudioProjects/MST04V1.0 - Copy - Copy/App1/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/mfcc.dir
+C:/Users/Nikhar/AndroidStudioProjects/MST04V1.0 - Copy - Copy/App1/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/computemfcc.dir
+C:/Users/Nikhar/AndroidStudioProjects/MST04V1.0 - Copy - Copy/App1/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/rebuild_cache.dir

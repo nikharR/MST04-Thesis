@@ -1,0 +1,4 @@
+#Tue Nov 14 00:23:20 CAT 2017
+base.0=C\:\\Users\\Nikhar\\AndroidStudioProjects\\MST04V1.0 - Copy - Copy\\App1\\build\\intermediates\\transforms\\dexMerger\\debug\\23
+renamed.0=classes.dex
+file.0=C\:\\Users\\Nikhar\\AndroidStudioProjects\\MST04V1.0 - Copy - Copy\\App1\\build\\intermediates\\transforms\\dexMerger\\debug\\23\\classes.dex

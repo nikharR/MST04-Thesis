@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.nikhar.mst04v10.AlignWaveformActivity"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+
+            >
+
+            <Button
+                android:id="@+id/loadButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="65dip"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@color/colorPrimary"
+                android:text="Load"
+                android:textColor="@android:color/background_light" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Alignment"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/saveButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="65dip"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginRight="15dip"
+                android:background="@color/colorPrimary"
+                android:text="Save"
+                android:textColor="@android:color/background_light" />
+        </android.support.v7.widget.Toolbar>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/promptTextLayout"
+        style="@android:style/ButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/first_text"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="25"
+            android:singleLine="true"
+            android:ellipsize="start"
+            android:scrollHorizontally="true"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimary"
+            android:textSize="11sp" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/main_text"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip"
+            android:layout_weight="50"
+            android:autoSizeMaxTextSize="24sp"
+            android:autoSizeMinTextSize="14sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@color/colorPrimaryDark"
+            android:maxLines="2"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/last_text"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="25"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="?attr/colorPrimary"
+            android:textAlignment="textStart"
+            android:textSize="11sp" />
+
+
+    </LinearLayout>
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:id="@+id/relativeLayout"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0">
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+        <com.example.nikhar.mst04v10.Ringdroid.WaveformView
+            android:id="@+id/waveform"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentStart="true"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/startmarker" />
+
+        <com.example.nikhar.mst04v10.Ringdroid.MarkerView
+            android:id="@+id/startmarker"
+            android:nextFocusDown="@+id/endmarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/marker_left"
+            android:contentDescription="@string/start_marker"
+
+             />
+
+        <com.example.nikhar.mst04v10.Ringdroid.MarkerView
+            android:id="@+id/endmarker"
+            android:nextFocusUp="@+id/startmarker"
+            android:nextFocusDown="@id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/marker_right"
+            android:contentDescription="@string/end_marker"
+             />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@android:style/ButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/start_minus"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="-"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/start_plus"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="+"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/mark_start"
+            android:layout_width="0dip"
+            android:layout_height="31dip"
+            android:layout_weight="15"
+            android:clickable="true"
+            android:labelFor="@+id/starttext"
+            android:text="@string/start_label"
+            android:textAlignment="center"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/starttext"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_marginRight="5dip"
+            android:layout_weight="15"
+            android:inputType="number|numberDecimal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/mark_end"
+            android:layout_width="0dip"
+            android:layout_height="31dip"
+            android:layout_weight="15"
+            android:clickable="true"
+            android:labelFor="@+id/endtext"
+            android:text="@string/end_label"
+            android:textAlignment="center"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/endtext"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_weight="15"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/end_minus"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="-"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/end_plus"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_weight="10"
+            android:text="+"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="@android:style/ButtonBar"
+        android:layout_width="fill_parent"
+
+        android:layout_height="53dp"
+        android:background="@color/colorPrimary"
+        android:weightSum="120"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/zoomout"
+            style="@android:style/MediaButton"
+            android:layout_width="0dip"
+            android:layout_height="52dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="6dip"
+            android:layout_marginTop="6dip"
+            android:layout_weight="30"
+            android:src="@android:drawable/ic_media_previous"
+            android:text="Zoom Out"
+            android:textColor="@android:color/background_light" />
+        <ImageButton
+            android:id="@+id/rew"
+            style="@android:style/MediaButton"
+            android:layout_width="0dip"
+            android:layout_height="52dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="6dip"
+            android:layout_marginTop="6dip"
+            android:layout_weight="20"
+            android:contentDescription="@string/rewind"
+            android:src="@android:drawable/ic_media_previous" />
+
+        <ImageButton
+            android:id="@+id/play"
+            style="@android:style/MediaButton"
+            android:layout_width="0dip"
+            android:layout_height="52dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="6dip"
+            android:layout_marginTop="6dip"
+            android:layout_weight="20"
+            android:contentDescription="@string/play"
+            android:src="@android:drawable/ic_media_play" />
+
+        <ImageButton
+            android:id="@+id/ffwd"
+            style="@android:style/MediaButton"
+            android:layout_width="0dip"
+            android:layout_height="52dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="6dip"
+            android:layout_marginEnd="5dip"
+            android:layout_marginTop="6dip"
+            android:layout_weight="20"
+            android:contentDescription="@string/ffwd"
+            android:src="@android:drawable/ic_media_next" />
+        <Button
+            android:id="@+id/zoomin"
+            style="@android:style/MediaButton"
+            android:layout_width="0dip"
+            android:layout_height="52dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="6dip"
+            android:layout_marginTop="6dip"
+            android:layout_weight="30"
+            android:src="@android:drawable/ic_media_previous"
+            android:text="Zoom In"
+            android:textColor="@android:color/background_light" />
+
+    </LinearLayout>
+
+</LinearLayout>
